@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, MapView, Platform, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, Image,MapView, Platform, StyleSheet, Text, View } from 'react-native';
 // import { NavigationProvider, StackNavigation } from '@exponent/ex-navigation';
 import Router from 'Router';
 import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
@@ -33,10 +33,14 @@ class AppContainer extends Component {
         >
         </MapView>
         <View style={styles.textWrapper}>
+          <Image
+            source={{uri:'http://www.techno4.us/mem_imgs/60_1443662274.jpg'}}
+            style= {styles.backgroundImage}
+            resizeMode={Image.resizeMode.sretch}
+          />
           <Text style={styles.text}>City: {this.state.city}</Text>
           <Text style={styles.text}>Temp: {this.state.temperature}</Text>
           <Text style={styles.text}>Desc: {this.state.description}</Text>
-
         </View>
       </View>
     );
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   map: {
-    flex: 2,
+    flex: 4,
     marginTop: 30
   },
   textWrapper: {
@@ -72,7 +76,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontSize: 30
+    flex: 1,
+    fontSize: 20
+  },
+  backgroundImage: {
+    flex: 1,
+    width: 100,
+    height: 100
   }
 });
 
